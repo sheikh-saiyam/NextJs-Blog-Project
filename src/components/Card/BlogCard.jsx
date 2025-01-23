@@ -13,13 +13,13 @@ const BlogCard = ({ blog }) => {
   };
 
   return (
-    <div className="bg-white shadow rounded p-6">
+    <div className="bg-white shadow rounded p-6 grid place-items-stretch">
       <h1 className="text-2xl font-semibold">Title: {sliceTitle(title)}</h1>
       <h3 className="text-lg font-medium my-3">
         <span className="font-semibold">Description:</span>{" "}
         {sliceDescription(description)}...
       </h3>
-      <Link href={`/blogs/${blog.id}`}>
+      <Link href={`/blogs/${id}`}>
         <Button>Read More</Button>
       </Link>
     </div>
