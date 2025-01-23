@@ -19,7 +19,7 @@ const BlogCard = ({ blog }) => {
         <span className="font-semibold">Description:</span>{" "}
         {sliceDescription(description)}...
       </h3>
-      <Link href={`/blogs/${id}`}>
+      <Link href={`/blogs/${id}`} prefetch={true}>
         <Button>Read More</Button>
       </Link>
     </div>
