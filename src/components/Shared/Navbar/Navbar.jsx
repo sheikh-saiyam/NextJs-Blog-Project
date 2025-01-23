@@ -14,7 +14,7 @@ const Navbar = async () => {
       <div className="navbar bg-base-100 px-2">
         <div className="flex-1">
           <Link href="/" prefetch={true}>
-            <Image src="/next.svg" width={100} height={150} />
+            <Image src="/next.svg" alt="Next.js logo" width={100} height={150} />
           </Link>
         </div>
         <div className="flex-none">
