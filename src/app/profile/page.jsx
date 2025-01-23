@@ -1,14 +1,43 @@
-import {
-  getKindeServerSession,
-  LoginLink,
-} from "@kinde-oss/kinde-auth-nextjs/server";
+import { Button } from "@/components/ui/button";
+import useAuth from "@/hooks/useAuth";
+import Image from "next/image";
 import { redirect } from "next/navigation";
 
 const Profile = async () => {
-  const { isAuthenticated } = getKindeServerSession();
+  const { isAuthenticated, getUser } = useAuth();
+  const user = await getUser();
+  const { email, family_name, given_name, picture } = user;
+
   return (await isAuthenticated()) ? (
-    <div>
-      This page is protected - but you can view it because you are authenticated
+    <div className="py-12">
+      <div className="pb-10">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl mt-3 tracking-widest font-semibold">
+          Welcome{" "}
+          <span className="border-b-2 border-black my-0 py-0">To Your</span>{" "}
+          Profile
+        </h1>
+      </div>
+      {/* profile container */}
+      <div className="px-6 py-10 shadow rounded border md:w-2/3 flex gap-6">
+        <div>
+          <Image
+            src={picture}
+            alt={given_name + " " + family_name}
+            width={100}
+            height={100}
+            className="rounded-full"
+          />
+        </div>
+        <div className="space-y-1">
+          <h1 className="text-xl font-semibold tracking-wider">
+            Username:{given_name + " " + family_name}
+          </h1>
+          <h1 className="text-xl font-semibold tracking-wider pb-1">
+            Email:{email}
+          </h1>
+          <Button>Edit Profile</Button>
+        </div>
+      </div>
     </div>
   ) : (
     redirect("/api/auth/login")
