@@ -25,7 +25,7 @@ const Profile = async () => {
             alt={given_name + " " + family_name}
             width={100}
             height={100}
-            className="rounded-full"
+            className="rounded-full border"
           />
         </div>
         <div className="space-y-1">
