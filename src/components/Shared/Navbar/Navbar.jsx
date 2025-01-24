@@ -52,14 +52,14 @@ const Navbar = async () => {
                 >
                   Profile
                 </Link>
-                <Button>
-                  <LogoutLink postLogoutRedirectURL="/">Logout</LogoutLink>
-                </Button>
+                <LogoutLink postLogoutRedirectURL="/">
+                  <Button>Logout</Button>
+                </LogoutLink>
               </>
             ) : (
-              <Button>
-                <LoginLink>Login</LoginLink>
-              </Button>
+              <LoginLink>
+                <Button>Login</Button>
+              </LoginLink>
             )}
           </ul>
         </div>
