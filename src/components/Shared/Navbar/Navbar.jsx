@@ -39,6 +39,12 @@ const Navbar = async () => {
             >
               Blogs
             </Link>
+            <Link
+              href={user ? "/profile" : "/api/auth/login"}
+              className={"font-semibold hover:underline hidden sm:flex"}
+            >
+              Profile
+            </Link>
             {/* Mobile Navbar */}
             <ul className="flex sm:hidden">
               <MobileNavbar user={user} />
@@ -46,12 +52,6 @@ const Navbar = async () => {
             {/* Mobile Navbar */}
             {user ? (
               <>
-                <Link
-                  href={"/profile"}
-                  className={"font-semibold hover:underline hidden sm:flex"}
-                >
-                  Profile
-                </Link>
                 <LogoutLink postLogoutRedirectURL="/">
                   <Button>Logout</Button>
                 </LogoutLink>
