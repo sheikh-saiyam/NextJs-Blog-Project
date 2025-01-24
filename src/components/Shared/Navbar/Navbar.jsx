@@ -53,7 +53,7 @@ const Navbar = async () => {
                   Profile
                 </Link>
                 <Button>
-                  <LogoutLink>Logout</LogoutLink>
+                  <LogoutLink postLogoutRedirectURL="/">Logout</LogoutLink>
                 </Button>
               </>
             ) : (
