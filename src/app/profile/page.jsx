@@ -5,8 +5,8 @@ import { redirect } from "next/navigation";
 
 const Profile = async () => {
   const { isAuthenticated, getUser } = useAuth();
-  const user = await getUser();
-  const { email, family_name, given_name, picture } = user;
+  const user = await getUser() || {};
+  const { email, family_name, given_name, picture } = user || {};
 
   return (await isAuthenticated()) ? (
     <div className="py-12">

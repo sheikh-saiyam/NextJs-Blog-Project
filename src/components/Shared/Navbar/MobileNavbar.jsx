@@ -25,16 +25,19 @@ const MobileNavbar = ({ user }) => {
           <DropdownMenuLabel>NavLinks</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
-            <DropdownMenuRadioItem value="bottom">
-              <Link href="/">Home</Link>
-            </DropdownMenuRadioItem>
-            <DropdownMenuRadioItem value="top">
-              <Link href="/blogs">Blogs</Link>
-            </DropdownMenuRadioItem>
+            <Link href="/">
+              {" "}
+              <DropdownMenuRadioItem value="bottom">Home</DropdownMenuRadioItem>
+            </Link>
+            <Link href="/blogs">
+              <DropdownMenuRadioItem value="top">Blogs</DropdownMenuRadioItem>
+            </Link>
             {user && (
-              <DropdownMenuRadioItem value="right">
-                <Link href="/profile">Profile</Link>
-              </DropdownMenuRadioItem>
+              <Link href="/profile">
+                <DropdownMenuRadioItem value="right">
+                  Profile
+                </DropdownMenuRadioItem>
+              </Link>
             )}
           </DropdownMenuRadioGroup>
         </DropdownMenuContent>
