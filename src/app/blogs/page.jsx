@@ -12,7 +12,7 @@ const Blogs = async () => {
       </div>
       {/* blogs container */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {blogs.map((blog) => (
+        {blogs.slice(0, 99).map((blog) => (
           <BlogCard key={blog.id} blog={blog} />
         ))}
       </div>

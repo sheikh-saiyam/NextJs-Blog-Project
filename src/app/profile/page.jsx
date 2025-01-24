@@ -18,7 +18,7 @@ const Profile = async () => {
         </h1>
       </div>
       {/* profile container */}
-      <div className="px-6 py-10 shadow rounded border md:w-2/3 flex gap-6">
+      <div className="px-6 py-10 shadow rounded border lg:w-2/3 flex flex-wrap gap-6">
         <div>
           <Image
             src={picture}
