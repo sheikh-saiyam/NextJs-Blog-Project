@@ -8,7 +8,7 @@ import MobileNavbar from "./MobileNavbar";
 const Navbar = async () => {
   // Get user --->
   const { getUser } = getKindeServerSession();
-  const user = await getUser() || {};
+  const user = await getUser();
 
   return (
     <nav className="py-4 border-b-2">

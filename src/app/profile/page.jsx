@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 
 const Profile = async () => {
   const { isAuthenticated, getUser } = useAuth();
-  const user = await getUser() || {};
+  const user = await getUser();
   const { email, family_name, given_name, picture } = user || {};
 
   return (await isAuthenticated()) ? (
@@ -33,7 +33,7 @@ const Profile = async () => {
             Username:{given_name + " " + family_name}
           </h1>
           <h1 className="text-xl font-semibold tracking-wider pb-1">
-            Email:{email}
+            Email:<span className="text-sm sm:text-xl">{email}</span>
           </h1>
           <Button>Edit Profile</Button>
         </div>
